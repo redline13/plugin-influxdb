@@ -1,0 +1,35 @@
+
+<!-- You are within a bootstrap <div class="row">YOUR CODE</div> -->
+<div class="col col-md-5">
+	<div class="form-group">
+		<label>InfluxDB Host</label>
+		<input class="form-control" name="influxdb_host" type="text">
+		<p class="help-block">This must be full url with PORT, it http://SERVER:8086/</p>
+	</div>
+</div>
+
+<div class="col col-md-offset-2 col-md-5">
+	<div class="form-group">
+		<label>Influx DB for metrics</label>
+		<input class="form-control" name="influxdb_db" type="text" value="redline13">
+		<p class="help-block">Required, we default to redline13.</p>
+	</div>
+</div>
+
+<script>
+// On Document Load Register plugin for events.
+$(function(){
+
+	CustomTest.registerPlugin( 'influxdb', function(event,data){
+		switch( event ){
+			case 'prefill':
+				break;
+			// When the plugin is enabled/disabled. event is true|false
+			case 'enabled':
+				break;
+			case 'disabled':
+				break;
+		}
+	});
+})
+</script>
